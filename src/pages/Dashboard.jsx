@@ -1,6 +1,10 @@
-import { Box, Container, Heading, Image, SimpleGrid, Text } from "@chakra-ui/react";
+import { EditIcon, ViewIcon } from "@chakra-ui/icons";
+import { Box, Button, Card, CardBody, CardFooter, CardHeader, Container, Divider, Flex, HStack, Heading, Image, SimpleGrid, Text } from "@chakra-ui/react";
+import { useLoaderData } from "react-router-dom";
 
 export default function Dashboard() {
+
+  const tasks = useLoaderData();
 
   const boxStyle = {
     p: "50px",
@@ -40,18 +44,18 @@ export default function Dashboard() {
   }
 
   const images = [
-    "https://images.unsplash.com/photo-1680479611085-2a075987da25",
-    "https://images.unsplash.com/photo-1680178441861-c9539e92434f",
-    "https://images.unsplash.com/photo-1677834097867-2558c44fdd11",
-    "https://images.unsplash.com/photo-1673832870868-929b5df3e993",
-    "https://images.unsplash.com/photo-1673506073231-3d4896dd45c2",
-    "https://images.unsplash.com/photo-1673337188151-d8f8dff438fe",
-    "https://images.unsplash.com/photo-1675384608610-5e2c9d2b647c",
-    "https://images.unsplash.com/photo-1672667680124-6b9294abf071",
-    "https://images.unsplash.com/photo-1655717727967-b140fbbfbc05",
-    "https://images.unsplash.com/photo-1603118258549-5be87cb17a81",
-    "https://images.unsplash.com/photo-1567972308721-4f22e8465feb",
-    "https://images.unsplash.com/photo-1597390520065-5f361b7f132a"
+    "https://i.postimg.cc/bN9SVGWK/1.jpg",
+    "https://i.postimg.cc/6qNTYw0W/10.jpg",
+    "https://i.postimg.cc/SQ7KkBd9/11.jpg",
+    "https://i.postimg.cc/qqXqFYb8/12.jpg",
+    "https://i.postimg.cc/L6pZVkCt/2.jpg",
+    "https://i.postimg.cc/K89kF6Zf/3.jpg",
+    "https://i.postimg.cc/9FLFqyvF/4.jpg",
+    "https://i.postimg.cc/gcRZRtDc/5.jpg",
+    "https://i.postimg.cc/28kS609K/6.jpg",
+    "https://i.postimg.cc/wB7tBwMp/7.jpg",
+    "https://i.postimg.cc/nc2MYyQx/8.jpg",
+    "https://i.postimg.cc/BnZLrSGt/9.jpg"
   ]
 
 
@@ -77,6 +81,40 @@ export default function Dashboard() {
           })
         }
       </SimpleGrid>
+      <SimpleGrid spacing={10} minChildWidth="200px" mb={20}>
+        {
+          tasks && tasks.map(task => (
+            <Card key={task.id} borderTop="8px" borderTopColor="tomato" bg="white">
+              <CardHeader>
+                <Flex gap={5}>
+                  <Box w="50px" h="50px" >
+                    <Text>AV</Text>
+                  </Box>
+                  <Box>
+                    <Heading as="h2" size="sm">{task.title}</Heading>
+                    <Text>by {task.author}</Text>
+                  </Box>
+                </Flex>
+              </CardHeader>
+              <CardBody color="gray.400">
+                <Text>{task.description}</Text>
+              </CardBody>
+              <Divider color="gray.200" w={200} mx="auto"></Divider>
+              <CardFooter>
+                <HStack>
+                  <Button variant="ghost" leftIcon={<ViewIcon />} >Details</Button>
+                  <Button variant="ghost" leftIcon={<EditIcon />} >Comment</Button>
+                </HStack>
+              </CardFooter>
+            </Card>
+          ))
+        }
+      </SimpleGrid>
     </Container>
   )
 }
+
+export const tasksLoader = async () => {
+  const response = await fetch('http://localhost:3000/tasks');
+  return response.json()
+};

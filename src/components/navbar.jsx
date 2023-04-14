@@ -40,15 +40,15 @@ export default function Navbar() {
             <Flex as="nav" p="10px">
                 {socials && socials.map((elem, index) => {
                     return (
-                        <Link key={elem.url} mx={3} href={elem.url}><FontAwesomeIcon icon={elem.icon} size="2x" /></Link>
+                        <Link fontSize={{ base: "3px", md: "8px", lg: "16px" }} key={elem.url} mx={3} href={elem.url}><FontAwesomeIcon icon={elem.icon} size="2x" /></Link>
                     )
                 })}
                 <Spacer />
-                <Heading as="h1" className='nav-title'>SCREENWRITERS' QUEST</Heading>
+                <Heading as="h1" className='nav-title' fontSize={{ base: "8px", md: "15px", lg: "32px" }} >SCREENWRITERS' QUEST</Heading>
                 <Spacer />
                 <HStack spacing={8} mr={3} ml={20} alignItems="center">
-                    <Link href='/'>Contact me</Link>
-                    <Link href='/' >Projects</Link>
+                    <Link fontSize={{ base: "3px", md: "8px", lg: "16px" }} href='/'>Contact me</Link>
+                    <Link fontSize={{ base: "3px", md: "8px", lg: "16px" }} href='/' >Projects</Link>
                 </HStack>
             </Flex>
             <Flex bg="gray.300" justifyContent="center" wrap="wrap">
