@@ -2,4 +2,46 @@
 
 .nav-title {
     font-family: 'Josefin Sans', sans-serif !important;
+    color: black;
+    transition: all 0.5s ease;
+}
+
+.nav-title:hover {
+    color: tomato;
+}
+
+.nav-icon {
+    transition: all 0.3s ease;
+}
+
+.nav-icon:hover {
+    color: tomato;
+}
+
+.nav-item {
+    box-sizing: content-box;
+    display: inline-block;
+    position: relative;
+
+}
+
+.nav-item:after {
+    box-sizing: content-box;
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background-color: tomato;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+.nav-item:hover:after {
+
+    box-sizing: content-box;
+    transform: scaleX(1);
+    transform-origin: bottom left;
 }
