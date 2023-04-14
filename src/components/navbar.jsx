@@ -46,7 +46,7 @@ export default function Navbar() {
                 <Spacer />
                 <Heading as="h1" className='nav-title'>SCREENWRITERS' QUEST</Heading>
                 <Spacer />
-                <HStack spacing={8} mx={3} alignItems="center">
+                <HStack spacing={8} mr={3} ml={20} alignItems="center">
                     <Link href='/'>Contact me</Link>
                     <Link href='/' >Projects</Link>
                 </HStack>
