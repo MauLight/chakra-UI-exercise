@@ -1,5 +1,5 @@
 import { EditIcon, ViewIcon } from "@chakra-ui/icons";
-import { Box, Button, Card, CardBody, CardFooter, CardHeader, Container, Divider, Flex, HStack, Heading, Image, SimpleGrid, Text } from "@chakra-ui/react";
+import { Avatar, Box, Button, Card, CardBody, CardFooter, CardHeader, Container, Divider, Flex, HStack, Heading, Image, SimpleGrid, Text } from "@chakra-ui/react";
 import { useLoaderData } from "react-router-dom";
 
 export default function Dashboard() {
@@ -61,7 +61,7 @@ export default function Dashboard() {
 
   return (
     <Container as="section" maxW="2xl">
-      <Heading my="40px" p="10px" >DASHBOARD</Heading>
+      <Heading my="40px" p="10px" >Dashboard</Heading>
       <Text marginLeft="30px">Irure sint id eu occaecat nostrud nostrud consequat aliqua veniam amet exercitation. Esse eu fugiat enim laborum quis incididunt proident incididunt eu proident. Adipisicing ad incididunt laboris do ullamco enim.</Text>
       <Text ml="30px" color="gray.400" fontWeight="thin">Irure sint id eu occaecat nostrud nostrud consequat aliqua veniam amet exercitation. Esse eu fugiat enim laborum quis incididunt proident incididunt eu proident. Adipisicing ad incididunt laboris do ullamco enim.</Text>
       <Box sx={boxStyle}>
@@ -87,9 +87,7 @@ export default function Dashboard() {
             <Card key={task.id} borderTop="8px" borderTopColor="tomato" bg="white">
               <CardHeader>
                 <Flex gap={5}>
-                  <Box w="50px" h="50px" >
-                    <Text>AV</Text>
-                  </Box>
+                  <Avatar src={task.img} />
                   <Box>
                     <Heading as="h2" size="sm">{task.title}</Heading>
                     <Text>by {task.author}</Text>

@@ -51,16 +51,15 @@ export default function Navbar() {
                     <Link fontSize={{ base: "3px", md: "8px", lg: "16px" }} href='/' >Projects</Link>
                 </HStack>
             </Flex>
-            <Flex bg="gray.300" justifyContent="center" wrap="wrap">
-                <Box w="150px" h="50px" bg="red.800">A</Box>
-                <Box w="150px" h="50px" bg="red.700">B</Box>
-                <Box w="150px" h="50px" bg="red.600">C</Box>
-                <Box w="150px" h="50px" bg="red.500">D</Box>
-                <Box w="150px" h="50px" bg="red.400">E</Box>
-                <Box w="150px" h="50px" bg="red.300">F</Box>
-                <Box w="150px" h="50px" bg="red.200">G</Box>
-                <Box w="150px" h="50px" bg="red.100">H</Box>
-                <Box w="150px" h="50px" bg="red.50" flexGrow="1">I</Box>
+            <Flex justifyContent="center" wrap="wrap">
+                <Box w="150px" h="50px" bg="red.800"></Box>
+                <Box w="150px" h="50px" bg="red.700"></Box>
+                <Box w="150px" h="50px" bg="red.600"></Box>
+                <Box w="150px" h="50px" bg="red.500"></Box>
+                <Box w="150px" h="50px" bg="red.400"></Box>
+                <Box w="150px" h="50px" bg="red.300"></Box>
+                <Box w="150px" h="50px" bg="red.200"></Box>
+                <Box w="150px" h="50px" bg="red.100"></Box>
             </Flex>
         </>
 
